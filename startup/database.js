@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
 const winston = require('winston');
+const config = require('config');
 
 module.exports = function() {
-    mongoose.connect('mongodb://localhost/rentacar')
-        .then(() => winston.info('Connected to the MongoDB...'))
+    const db = config.get('database');
+    mongoose.connect(db)
+        .then(() => winston.info(`Connected to the ${db}...`))
 }

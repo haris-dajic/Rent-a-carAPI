@@ -1,5 +1,7 @@
-const {Vehicle, validate, createVehicle, createVehicleObject} = require('../models/vehicle');
+const { Vehicle, validate, createVehicle, createVehicleObject } = require('../models/vehicle');
+const auth = require('../middleware/auth');
 const express = require('express');
+const validateObjectId = require('../middleware/validateObjectId');
 const router = express.Router();
 
 router.get('/', async (req, res) => {
@@ -7,9 +9,9 @@ router.get('/', async (req, res) => {
     res.send(vehicles);
 });
 
-router.post('/', async(req, res) => {
-    const {error} = validate(req.body);
-    if(error) return res.status(400).send(error.details[0].message);
+router.post('/', auth, async (req, res) => {
+    const { error } = validate(req.body);
+    if (error) return res.status(400).send(error.details[0].message);
 
     let newVehicle = createVehicle(req.body);
     newVehicle = await newVehicle.save();
@@ -17,27 +19,27 @@ router.post('/', async(req, res) => {
     return res.send(newVehicle);
 });
 
-router.get('/:id', async (req, res) => {
+router.get('/:id', validateObjectId, async (req, res) => {
     const vehicle = await Vehicle.findById(req.params.id);
-    if(!vehicle) return res.status(404).send('There is no vehicle with given ID');
+    if (!vehicle) return res.status(404).send('There is no vehicle with given ID');
 
     res.send(vehicle);
 });
 
-router.put('/:id', async (req, res) => {
-    const {error} = validate(req.body);
-    if(error) return res.status(400).send(error.details[0].message);
+router.put('/:id', validateObjectId, async (req, res) => {
+    const { error } = validate(req.body);
+    if (error) return res.status(400).send(error.details[0].message);
 
-    const vehicle =  await Vehicle.findByIdAndUpdate(req.params.id, createVehicleObject(req.body), { new : true});
+    const vehicle = await Vehicle.findByIdAndUpdate(req.params.id, createVehicleObject(req.body), { new: true });
 
-    if(!vehicle) return res.status(404).send('There is no vehicle with given ID');
+    if (!vehicle) return res.status(404).send('There is no vehicle with given ID');
     res.send(vehicle);
 });
 
 
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', validateObjectId,  async (req, res) => {
     const vehicle = await Vehicle.findByIdAndRemove(req.params.id);
-    if(!vehicle) return res.status(404).send('There is no vehicle with given ID');
+    if (!vehicle) return res.status(404).send('There is no vehicle with given ID');
 
     res.send(vehicle);
 });
