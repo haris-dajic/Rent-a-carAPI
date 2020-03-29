@@ -1,6 +1,6 @@
 # Rent-a-carAPI
 
-## Quick Start
+## Start
 
   First we need to clone project and install all dependencies:
 
