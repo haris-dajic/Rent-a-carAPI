@@ -16,7 +16,7 @@ $ npm install
 ```bash
 $ node index.js
 ```
-##API routes
+## API routes
 
     All API routes are stored in json files in Postman routes folder
     Import that files and thes API throug Postman
