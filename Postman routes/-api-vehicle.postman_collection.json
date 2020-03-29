@@ -1,0 +1,82 @@
+{
+	"variables": [],
+	"info": {
+		"name": "/api/vehicle",
+		"_postman_id": "eaab29d0-d6a1-a160-4690-5db03986e248",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "All vehicles",
+			"request": {
+				"url": "http://localhost:3000/api/vehicles",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Add new vehicle",
+			"request": {
+				"url": "http://localhost:3000/api/vehicles",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"brend\": \"BMW\",\n    \"fuel\": \"Benzin\",\n    \"numberOfDoors\": 5,\n    \"manufacturingDate\": \"2015-06-10\",\n    \"color\": \"Black\",\n    \"isFree\": true,\n    \"numberOfPerson\": 5,\n    \"licenceNumber\": \"854-M-987\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Update vehicle",
+			"request": {
+				"url": "http://localhost:3000/api/vehicles/5e7d99593f294728b08bb910",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"brend\": \"BMW\",\n    \"fuel\": \"Benzin\",\n    \"numberOfDoors\": 5,\n    \"manufacturingDate\": \"2015-06-10\",\n    \"color\": \"Black\",\n    \"isFree\": true,\n    \"numberOfPerson\": 5,\n    \"licenceNumber\": \"854-M-912\"\n}"
+				},
+				"description": "/api/vehicle/vehicleId"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete vehicle",
+			"request": {
+				"url": "http://localhost:3000/api/vehicles/5e7d99593f294728b08bb910",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"carId\": \"12345\",\n    \"daysRented\": 0,\n    \"firstName\": \"Haris\",\n    \"lastName\": \"Dajic\",\n    \"phone\": \"+38762111333\"\n}"
+				},
+				"description": "/api/vehicle/vehicleId"
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,82 @@
+{
+	"variables": [],
+	"info": {
+		"name": "/api/customer",
+		"_postman_id": "5d7619f3-155f-69f2-4ac6-2b9b4613d521",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "All customers",
+			"request": {
+				"url": "http://localhost:3000/api/customers",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Add new customer",
+			"request": {
+				"url": "http://localhost:3000/api/customers",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"firstName\": \"Edin\",\r\n        \"lastName\": \"Dzeko\",\r\n        \"phone\": \"+38762999159\",\r\n\t\t\"adress\": \"Sarajevo, Antuna Hangija 4\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Update customer",
+			"request": {
+				"url": "http://localhost:3000/api/customers/5e7dfd32c639632adcdaa118",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"firstName\": \"Edin\",\r\n        \"lastName\": \"Dzeko\",\r\n        \"phone\": \"+38762999159\",\r\n\t\t\"adress\": \"Sarajevo, Antuna Hangija 7\"\r\n}"
+				},
+				"description": "/api/customer/customerId"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete customer",
+			"request": {
+				"url": "http://localhost:3000/api/customers/5e7dfd32c639632adcdaa118",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"carId\": \"12345\",\n    \"daysRented\": 0,\n    \"firstName\": \"Haris\",\n    \"lastName\": \"Dajic\",\n    \"phone\": \"+38762111333\"\n}"
+				},
+				"description": "/api/customer/customerId"
+			},
+			"response": []
+		}
+	]
+}

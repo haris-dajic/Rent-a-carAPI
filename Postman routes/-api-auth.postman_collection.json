@@ -1,0 +1,31 @@
+{
+	"variables": [],
+	"info": {
+		"name": "/api/auth",
+		"_postman_id": "ea099ab7-d8e8-2b42-9b9d-8005fce54fdb",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"url": "http://localhost:3000/api/auth/login",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"edzeko\",\n\t\"password\": \"test12345\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

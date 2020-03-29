@@ -1,0 +1,82 @@
+{
+	"variables": [],
+	"info": {
+		"name": "/api/rental",
+		"_postman_id": "41361720-b0e4-b449-47b8-7f682a2b025c",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "All rentals",
+			"request": {
+				"url": "http://localhost:3000/api/rentals",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Add new rental",
+			"request": {
+				"url": "http://localhost:3000/api/rentals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"deposit\": 0,\n        \"damageInsurance\": \"No issurance\",\n        \"totalCost\": 200,\n        \"customerId\": \"5e7d951c76dd1f3cecdc338c\",\n        \"vehicleId\": \"5e7da0060e27942d10b9dfe8\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Update rental",
+			"request": {
+				"url": "http://localhost:3000/api/rentals/5e7da526edbbc32828c84133",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"deposit\": 0,\n        \"damageInsurance\": \"No issurance123\",\n        \"totalCost\": 250,\n        \"customerId\": \"5e7d94df76dd1f3cecdc338b\",\n        \"vehicleId\": \"5e7da0060e27942d10b9dfe8\"\n}"
+				},
+				"description": "/api/rental/rentalId"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete rental",
+			"request": {
+				"url": "http://localhost:3000/api/rentals/5e7da4b4edbbc32828c8412e",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"carId\": \"12345\",\n    \"daysRented\": 0,\n    \"firstName\": \"Haris\",\n    \"lastName\": \"Dajic\",\n    \"phone\": \"+38762111333\"\n}"
+				},
+				"description": "/api/rental/rantalId"
+			},
+			"response": []
+		}
+	]
+}

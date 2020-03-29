@@ -1,0 +1,56 @@
+{
+	"variables": [],
+	"info": {
+		"name": "/api/users",
+		"_postman_id": "3f71629c-4f05-054e-9fbe-7035babbd559",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Registering user",
+			"request": {
+				"url": "http://localhost:3000/api/users/register",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Edin Dzeko\",\n\t\"username\": \"edzeko1\",\n\t\"email\": \"proba2@test.com\",\n\t\"password\": \"test12345\"\n}"
+				},
+				"description": "/api/vehicle/vehicleId"
+			},
+			"response": []
+		},
+		{
+			"name": "Get current user",
+			"request": {
+				"url": "http://localhost:3000/api/users/me",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTdlMmVmY2NhYWYyODE0YTRiZjE4OTYiLCJpYXQiOjE1ODUzNDY1MTZ9.PcGuXqUD2Uyw3xGDYJxQCSNoqihmTjlhyf9NwcXcBWU",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Edin Dzeko\",\n\t\"username\": \"edzeko1\",\n\t\"email\": \"proba2@test.com\",\n\t\"password\": \"test12345\"\n}"
+				},
+				"description": "/api/vehicle/vehicleId"
+			},
+			"response": []
+		}
+	]
+}
