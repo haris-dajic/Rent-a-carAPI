@@ -2,7 +2,7 @@
 
 ## Quick Start
 
-    First we need to clone project and install all dependencies.
+    First we need to clone project and install all dependencies:
 
 ```bash
 $ git clone github.com/haris-dajic/Rent-a-carAPI
