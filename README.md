@@ -1,17 +1,14 @@
 # Rent-a-carAPI
 
-## Example
+## Quick Start
 
-  To view the examples, clone the Rent-a-carAPI repo and install the dependencies:
-
-```bash
+    First we need to clone project and install all dependencies.
+```
 $ git clone github.com/haris-dajic/Rent-a-carAPI
 $ cd Rent-a-carAPI
 $ npm install
-
 ```
-
-  Then run with command:
+  Start the application:
 
 ```bash
 $ node index.js
@@ -30,3 +27,7 @@ $ node index.js
 $ npm install
 $ npm test
 ```
+
+## License
+
+  [MIT](LICENSE)
