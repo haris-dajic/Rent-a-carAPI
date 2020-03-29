@@ -19,7 +19,7 @@ $ node index.js
 ## API routes
 
     All API routes are stored in json files in Postman routes folder
-    Import that files and thes API throug Postman
+    Import that files and check API throught Postman
 
 
 ## Tests
