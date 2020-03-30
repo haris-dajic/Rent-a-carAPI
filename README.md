@@ -12,6 +12,7 @@ $ npm install
   Then we need to setup our Private Key for JWT, we do that as environment variable with the name 'rentacar_jwtPrivateKey'
 
   On windows:
+  
     setx rentacar_jwtPrivateKey=OurPrivateKey123
 
   On Linux and Mac:
