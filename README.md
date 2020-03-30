@@ -9,6 +9,15 @@ $ git clone github.com/haris-dajic/Rent-a-carAPI
 $ cd Rent-a-carAPI
 $ npm install
 ```
+  Then we need to setup our Private Key for JWT, we do that as environment variable with the name 'rentacar_jwtPrivateKey'
+
+  On windows:
+    setx rentacar_jwtPrivateKey=OurPrivateKey123
+
+  On Linux and Mac:
+
+    export rentacar_jwtPrivateKey=OurPrivateKey123
+
   Start the application:
 
 ```bash
