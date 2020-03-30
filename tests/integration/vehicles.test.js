@@ -7,7 +7,7 @@ let server;
 describe('/api/vehicles', () => {
     beforeEach(() => { server = require('../../index'); });
     afterEach(async () => {
-        server.close();
+        await server.close();
         await Vehicle.remove({});
     });
 

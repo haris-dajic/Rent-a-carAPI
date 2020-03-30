@@ -5,18 +5,26 @@ const {Vehicle} = require('../../models/vehicle');
 let server;
 
 describe('auth middleware', () => {
-
-    beforeEach(() => { server = require('../../index'); });
+    let token;
+    beforeEach(() => { server = require('../../index'); token = new User().generateAuthToken();});
     afterEach(async () => { 
-        server.close(); 
         await Vehicle.remove({});
+        await server.close(); 
     });
 
-    let token;
+
     const exec = () => {
         return request(server).post('/api/vehicles')
         .set('x-auth-token', token)
-        .send({brend: 'BMW'});
+        .send({
+            brend: 'BMW',
+            fuel: 'Benzin',
+            numberOfDoors: 2,
+            manufacturingDate: "2015-12-05T23:00:00.000Z",
+            isFree: true,
+            numberOfPerson: 4,
+            licenceNumber: "145-M-225"
+        });
     };
 
     beforeEach(() => { token = new User().generateAuthToken();});
@@ -28,7 +36,7 @@ describe('auth middleware', () => {
     });
 
     it('should return 400 if token is not valid', async () => {
-        token = token + 1;
+        token = 'a';
         const result = await exec();
         expect(result.status).toBe(400);
     });
